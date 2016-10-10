@@ -317,11 +317,11 @@ def build_version
 end
 
 def last_beta
-  return sh("git describe origin/develop --match=\"beta*\" --abbrev=0").strip
+  return sh("git describe origin/develop --match=\"beta*\" --tags --abbrev=0").strip
 end
 
 def last_release
-  return sh("git describe origin/master --match=\"release*\" --abbrev=0").strip
+  return sh("git describe origin/master --match=\"release*\" --tags --abbrev=0").strip
 end
 
 def compare_url(options={})
