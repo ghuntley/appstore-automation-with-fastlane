@@ -202,14 +202,8 @@ end
 desc "Upload application screenshots to iTunes Connect and Google Play"
 lane :screenshots do
 
-  supply(
-    json_key: GOOGLE_PLAY_JSON_KEY,
-    package_name: APPLICAITON_IDENTIFIER,
-    metadata_path: "metadata/google-play",
-    skip_upload_metadata: true,
-    skip_upload_images: false,
-    skip_upload_screenshots: false
-  )
+  screenshots_itunesconnect
+  screenshots_googleplay
 
 end
 
