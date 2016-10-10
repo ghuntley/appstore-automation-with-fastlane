@@ -1,0 +1,10 @@
+# For all available options run `deliver --help`
+####################################################################################
+
+# The bundle identifier of your app
+app_identifier "com.ghuntley.fastlanelecture"
+
+# Your Apple Developer Portal username
+username "ghuntley@ghuntley.com" 
+
+automatic_release false

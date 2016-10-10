@@ -1,0 +1,8 @@
+# For all available options run `supply --help`
+####################################################################################
+
+json_key "~/Desktop/google-play-account-secret.json"
+
+package_name "com.ghuntley.fastlanelecture"
+
+metadata_path "./metadata/google-play"

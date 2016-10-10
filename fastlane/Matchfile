@@ -1,0 +1,17 @@
+# For all available options run `match --help`
+####################################################################################
+
+# URL to the git repo containing all the certificates
+git_url "git@github.com:ghuntley/apple-certificates.git"
+
+# The default type, can be: appstore, adhoc or development
+type "development" 
+
+# The bundle identifier of your app
+app_identifier "com.ghuntley.fastlanelecture"
+
+# Your Apple Developer Portal username
+username "ghuntley@ghuntley.com" 
+
+# The ID of your team if you're in multiple teams
+team_id "J98S49XE45"

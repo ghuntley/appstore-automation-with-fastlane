@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1053282" android:versionName="0.0.1.1476053282" package="com.ghuntley.fastlanelecture">
+	<uses-sdk android:minSdkVersion="15" />
+	<application android:label="Fastlane Lecture"></application>
+</manifest>
