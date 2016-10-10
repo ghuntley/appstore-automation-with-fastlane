@@ -114,7 +114,7 @@ private_lane :deploy_itunesconnect do
   when "master", "release"
 
     deliver(
-      metadata_path: "metadata/apple",
+      metadata_path: "metadata/itunes-connect",
       force: true,
       ipa: ipa,
       skip_screenshots: true,
@@ -185,7 +185,7 @@ end
 private_lane :metadata_itunesconnect do
 
   deliver(
-    metadata_path: "metadata/apple",
+    metadata_path: "metadata/itunes-connect",
     force: true,
     skip_binary_upload: true,
     skip_screenshots: true,
@@ -210,7 +210,7 @@ end
 private_lane :screenshots_itunesconnect do
 
   deliver(
-    metadata_path: "metadata/apple",
+    metadata_path: "metadata/itunes-connect",
     force: true,
     skip_binary_upload: true,
     skip_screenshots: false,
