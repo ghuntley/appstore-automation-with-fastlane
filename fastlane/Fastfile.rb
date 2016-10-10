@@ -171,14 +171,8 @@ end
 desc "Upload application metadata to iTunes Connect and Google Play"
 lane :metadata do
 
-  supply(
-    json_key: GOOGLE_PLAY_JSON_KEY,
-    package_name: APPLICAITON_IDENTIFIER,
-    metadata_path: "metadata/google-play",
-    skip_upload_metadata: false,
-    skip_upload_images: true,
-    skip_upload_screenshots: true
-  )
+  metadata_itunesconnect
+  metadata_googleplay
 
 end
 
@@ -197,6 +191,16 @@ private_lane :metadata_itunesconnect do
 end
 
 private_lane :metadata_googleplay do
+
+  supply(
+    json_key: GOOGLE_PLAY_JSON_KEY,
+    package_name: APPLICAITON_IDENTIFIER,
+    metadata_path: "metadata/google-play",
+    skip_upload_metadata: false,
+    skip_upload_images: true,
+    skip_upload_screenshots: true
+  )
+
 end
 
 desc "Upload application screenshots to iTunes Connect and Google Play"
