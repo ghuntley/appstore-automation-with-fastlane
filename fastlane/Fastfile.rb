@@ -215,6 +215,7 @@ private_lane :screenshots_itunesconnect do
 
   deliver(
     metadata_path: "metadata/itunes-connect",
+    screenshots_path: "metadata/itunes-connect/screenshots",
     force: true,
     skip_binary_upload: true,
     skip_screenshots: false,
