@@ -8,6 +8,6 @@ using System.Reflection;
 [assembly: AssemblyProduct("Geoffrey Huntley")]
 [assembly: AssemblyVersion("0.0.1")]
 [assembly: AssemblyFileVersion("0.0.1")]
-[assembly: AssemblyInformationalVersion("0.0.1.1476053282")]
+[assembly: AssemblyInformationalVersion("0.0.1.1")]
 [assembly: AssemblyCopyright("Copyright (c) Geoffrey Huntley")]
 
