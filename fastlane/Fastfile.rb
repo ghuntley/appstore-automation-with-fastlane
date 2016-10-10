@@ -131,7 +131,7 @@ private_lane :deploy_itunesconnect do
       username: ITUNES_CONNECT_USERNAME,
       team_id: ITUNES_CONNECT_TEAM_ID,
       distribute_external: false,
-      skip_waiting_for_build_processing: false
+      skip_waiting_for_build_processing: true
     )
 
   else
