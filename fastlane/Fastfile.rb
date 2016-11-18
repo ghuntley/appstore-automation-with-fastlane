@@ -29,7 +29,7 @@ end
 
 desc "Build production and debug build"
 lane :build do
-  
+
   changelog
   certificates
 
@@ -76,7 +76,7 @@ lane :deploy do
     screenshots
 
   when "develop", "beta"
-    
+
     build
 
     tag_beta
@@ -100,8 +100,8 @@ private_lane :deploy_itunesconnect do
     adhoc: true,
     force: true,
     filename: APPLICAITON_IDENTIFIER + ".mobileprovision",
-    app_identifier: APPLICAITON_IDENTIFIER, 
-    team_id: ITUNES_CONNECT_TEAM_ID, 
+    app_identifier: APPLICAITON_IDENTIFIER,
+    team_id: ITUNES_CONNECT_TEAM_ID,
     username: ITUNES_CONNECT_USERNAME
   )
 
@@ -124,7 +124,7 @@ private_lane :deploy_itunesconnect do
     )
 
   when "develop", "beta"
-    
+
     pilot(
       ipa: ipa,
       app_identifier: APPLICAITON_IDENTIFIER,
@@ -145,7 +145,7 @@ end
 lane :deploy_googleplay do
 
   apk = "artifacts/android/release/com.ghuntley.fastlanelecture-Signed.apk"
-  
+
   supply(
     json_key: GOOGLE_PLAY_JSON_KEY,
     package_name: APPLICAITON_IDENTIFIER,
@@ -202,14 +202,8 @@ end
 desc "Upload application screenshots to iTunes Connect and Google Play"
 lane :screenshots do
 
-  supply(
-    json_key: GOOGLE_PLAY_JSON_KEY,
-    package_name: APPLICAITON_IDENTIFIER,
-    metadata_path: "metadata/google-play",
-    skip_upload_metadata: true,
-    skip_upload_images: false,
-    skip_upload_screenshots: false
-  )
+  screenshots_itunesconnect
+  screenshots_googleplay
 
 end
 
@@ -236,10 +230,10 @@ private_lane :puts_changelog do |options|
   puts compare_url(tag: tag)
 
   puts changelog_from_git_commits(
-    between: [tag, "HEAD"], 
+    between: [tag, "HEAD"],
     pretty: "- (%ae) %s",
     match_lightweight_tag: false,
-    include_merges: false 
+    include_merges: false
   )
 
 end
@@ -258,7 +252,7 @@ private_lane :tag_beta do |options|
   sh("git stash apply")
 
   push_to_git_remote(
-      local_branch: 'beta', 
+      local_branch: 'beta',
       remote_branch: 'beta'
   )
 
@@ -280,7 +274,7 @@ private_lane :tag_release do |options|
   sh("git stash apply")
 
   push_to_git_remote(
-      local_branch: 'release',  
+      local_branch: 'release',
       remote_branch: 'release'
   )
 
@@ -327,7 +321,7 @@ end
 def compare_url(options={})
   tag = options[:tag]
   head = last_git_commit[:abbreviated_commit_hash]
-  
+
   return "https://github.com/ghuntley/appstore-automation-with-fastlane/compare/#{tag}...#{head}"
 end
 
